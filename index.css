@@ -1,0 +1,119 @@
+* {
+  font-family: inherit;
+  box-sizing: inherit;
+}
+
+.absolute-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+}
+#overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+#loadingScreen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-color: #002660;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 998;
+  pointer-events: auto;
+}
+
+#loadingImg {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 999;
+}
+
+#gyroSettings {
+  z-index: 1050;
+  background-size: contain;
+  background-color: #002660;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url('../graphics/GyroSettings.jpg');
+}
+
+#promptImage {
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  display: block;
+  text-align: center;
+  top: 1vh;
+  z-index: 999; 
+}
+
+#ctaImage {
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  display: block;
+  text-align: center;
+  top: 1vh;
+  z-index: 999; 
+}
+
+.gfxButton {
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  display: block;
+  text-align: center;
+  bottom: 3vh;
+  pointer-events: auto;
+  z-index: 999;
+}
+
+
+/* #promptImage {
+    display: none;
+    position: absolute;
+    top: 2vmax;
+    left: 50vw;
+    transform: translate(-50%, 0);
+    width: calc(35vmin + 25vmax);
+    height: calc(10vmin + 10vmax);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('UglyDollsPrompt.png');
+    z-index: 999;
+  }
+
+  #ctaImage {
+    display: none;
+    position: absolute;
+    top: 2vmax;
+    left: 50vw;
+    transform: translate(-50%, 0);
+    width: calc(35vmin + 25vmax);
+    height: calc(10vmin + 10vmax);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('tt2.png');
+    z-index: 999;
+  } */
+
+  
