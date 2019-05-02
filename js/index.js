@@ -59,7 +59,10 @@ AFRAME.registerComponent('tap-place', {
         promptImage.style.visibility = "hidden";
         setTimeout(() => {
           ctaImage.style.visibility = 'visible';
-        }, 10000);
+          setTimeout(()=> {
+            extLinkButton.style.visibility = 'visible';
+          }, 5000);
+        }, 5000);
       }
 
       // The raycaster gives a location of the touch in the scene
