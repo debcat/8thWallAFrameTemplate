@@ -16,25 +16,22 @@ AFRAME.registerComponent('loading-screen', {
     const device = XR.XrDevice.deviceEstimate();
     const loadingImg = document.getElementById(`loadingImg`);
 
-    if (!XR.XrDevice.isDeviceBrowserCompatible()) {
-      if (device.os != "iOS" && device.os != "Android") {
-        loadingImg.src = "graphics/DesktopScreen.jpg";
-        desktopImgForeground.style.visibility = 'visible';
-      } else if (XR.XrDevice.IncompatibilityReasons.UNSUPPORTED_BROWSER) {
-        loadingImg.src = "graphics/AlmostThere.jpg";
-      } else {
-        loadingImg.src = "graphics/Error.jpg";
-      }
-    }
-
-
     scene.addEventListener('realityready', () => {
       loadingScreen.style.display = 'none';
-      promptImage.style.visibility = 'visible';
-      
+      promptImage.style.visibility = 'visible';      
     })
+
     scene.addEventListener('realityerror', () => {
-      loadingImg.src = "graphics/Error.jpg";
+      if (!XR.XrDevice.isDeviceBrowserCompatible()) {
+        if (device.os != "iOS" && device.os != "Android") {
+          loadingImg.src = "graphics/DesktopScreen.jpg";
+          desktopImgForeground.style.visibility = 'visible';
+        } else if (XR.XrDevice.IncompatibilityReasons.UNSUPPORTED_BROWSER) {
+          loadingImg.src = "graphics/AlmostThere.jpg";
+        } else {
+          loadingImg.src = "graphics/Error.jpg";
+        }
+      }
     })
     
   }
@@ -81,6 +78,7 @@ AFRAME.registerComponent('tap-place', {
     });
   }
 });
+
 
 AFRAME.registerComponent('req-camera-permissions', {
   init: function () {
